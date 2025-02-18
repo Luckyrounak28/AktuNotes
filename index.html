@@ -1,0 +1,322 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   AKTU Notes
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo img {
+      height: 40px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    header h1 span.notes {
+      color: #ecf0f1; /* Light gray color for "Notes" */
+      font-weight: bold;
+    }
+
+    header .admin a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      background-color: #34495e;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    header .admin a:hover {
+      background-color: #2c3e50;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .unique-design {
+      background: linear-gradient(135deg, #3498db, #2ecc71);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .unique-design h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .unique-design p {
+      margin: 10px 0 0;
+      font-size: 16px;
+    }
+
+    .search-container, .filters, .note-type-section, .mini-projects {
+      margin-bottom: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #34495e;
+    }
+
+    .mini-projects h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .project h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .project button {
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      display: block;
+      width: 100%;
+    }
+
+    .project button:hover {
+      background-color: #34495e;
+    }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="logo">
+    <img alt="Logo of AKTU Notes, a stylized book with the initials 'AKTU' on it" height="40" src="logo.png" width="40"/>
+   </div>
+   <h1>
+    AKTU
+    <span class="notes">
+     Notes
+    </span>
+   </h1>
+   <div class="admin">
+    <a href="admin.html">
+     Admin
+    </a>
+   </div>
+  </header>
+  <main>
+   <div class="unique-design">
+    <h2>
+     Welcome to AKTU Notes
+    </h2>
+    <p>
+     Your one-stop solution for all academic resources
+    </p>
+   </div>
+   <div class="search-container">
+    <label for="search-notes">
+     Search Notes:
+    </label>
+    <input id="search-notes" placeholder="Enter keywords" type="text"/>
+    <button onclick="searchNotes()">
+     Search
+    </button>
+   </div>
+   <div class="filters">
+    <label for="course">
+     Course:
+    </label>
+    <select id="course">
+     <option value="btech">
+      B.Tech
+     </option>
+     <option value="mba">
+      MBA
+     </option>
+    </select>
+    <label for="branch">
+     Branch:
+    </label>
+    <select id="branch">
+     <option value="cse">
+      CSE
+     </option>
+     <option value="ece">
+      ECE
+     </option>
+    </select>
+    <label for="semester">
+     Semester:
+    </label>
+    <select id="semester">
+     <option value="1">
+      1st Semester
+     </option>
+     <option value="2">
+      2nd Semester
+     </option>
+    </select>
+    <label for="note-type">
+     Choose what you want:
+    </label>
+    <select id="note-type">
+     <option value="notes">
+      Notes
+     </option>
+     <option value="pyq">
+      PYQ
+     </option>
+     <option value="short-notes">
+      Short Notes
+     </option>
+     <option value="important-topics">
+      Important Topics
+     </option>
+    </select>
+   </div>
+   <button onclick="filterNotes()">
+    Submit
+   </button>
+   <div class="mini-projects">
+    <h2>
+     Mini Projects
+    </h2>
+    <div class="project">
+     <img alt="Image of a mini project related to web development" height="200" src="https://storage.googleapis.com/a1aa/image/qI1o49KOKusRrn-679KsISszDTO_PEffbBXaNhyUZBQ.jpg" width="300"/>
+     <h3>
+      Web Development Project
+     </h3>
+     <p>
+      A comprehensive project on building a responsive website using HTML, CSS, and JavaScript.
+     </p>
+     <button>
+      Buy Now
+     </button>
+    </div>
+    <div class="project">
+     <img alt="Image of a mini project related to machine learning" height="200" src="https://storage.googleapis.com/a1aa/image/rY4Tl5zA4Wh64uZazMuUDp8VcDMsykMvlQmq3DbpaRQ.jpg" width="300"/>
+     <h3>
+      Machine Learning Project
+     </h3>
+     <p>
+      An in-depth project on implementing machine learning algorithms using Python.
+     </p>
+     <button>
+      Buy Now
+     </button>
+    </div>
+    <div class="project">
+     <img alt="Image of a mini project related to data analysis" height="200" src="https://storage.googleapis.com/a1aa/image/DUZSR4cQ8nFoT1arRM0AhLPiUakMDa8faOMnWBK4G4k.jpg" width="300"/>
+     <h3>
+      Data Analysis Project
+     </h3>
+     <p>
+      A detailed project on analyzing datasets using various data analysis tools and techniques.
+     </p>
+     <button>
+      Buy Now
+     </button>
+    </div>
+   </div>
+  </main>
+  <script>
+   function searchNotes() {
+      const keyword = document.getElementById('search-notes').value;
+      alert(`Searching notes for: ${keyword}`);
+    }
+
+    function filterNotes() {
+      const keyword = document.getElementById('search-notes').value;
+      const course = document.getElementById('course').value;
+      const branch = document.getElementById('branch').value;
+      const semester = document.getElementById('semester').value;
+      const noteType = document.getElementById('note-type').value;
+
+      alert(`Filtering notes for: ${keyword}, Course: ${course}, Branch: ${branch}, Semester: ${semester}, Type: ${noteType}`);
+    }
+  </script>
+ </body>
+</html>
